@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Window size</title>
+    <style>
+      .ex {
+        display: block;
+        background-color: blanchedalmond;
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ex"></div>
+    <script>
+      const ex = document.querySelector('.ex');
+
+      function printInfo() {
+        ex.innerHTML = `window.screen: ${window.screen.width}, ${window.screen.height} <br/>
+          window.outer: ${window.outerWidth}, ${window.outerHeight} <br/>
+          window.inner: ${window.innerWidth}, ${window.innerHeight} <br/>
+          document.documentElement.client(W/H): ${document.documentElement.clientWidth}, ${document.documentElement.clientHeight}`;
+      }
+
+      window.addEventListener('resize', () => printInfo());
+      printInfo();
+    </script>
+  </body>
+</html>
